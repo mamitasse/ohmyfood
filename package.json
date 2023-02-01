@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "openclassrooms projet 3 ohmyfood aplication restaurants",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamitasse/ohmyfood.git"
+  },
+  "author": "TASSADIT IDIRI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mamitasse/ohmyfood/issues"
+  },
+  "homepage": "https://github.com/mamitasse/ohmyfood#readme",
+  "devDependencies": {
+    "sass": "^1.58.0"
+  }
+}
