@@ -1,5 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@400;500&family=Shrikhand&display=swap");
+.city {
+  background-color: #f3f3f3;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #616060;
+}
+.city h2 {
+  margin-top: 2rem;
+  font-size: large;
+  text-align: center;
+}
+.city p {
+  font-size: medium;
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,56 +37,32 @@ body {
 
 h1 {
   font-family: shrikhand, cursive;
-}
-
-header a {
-  text-decoration: none;
-  color: black;
-}
-
-header {
   text-align: center;
   position: relative;
   box-shadow: 0px 3px 1px 1px rgb(164, 164, 164);
   padding: 0.3rem;
+  margin: 0px;
 }
-
-.city {
-  background-color: #f3f3f3;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  color: #616060;
-}
-
-.explorer h2, p {
-  text-align: center;
-}
-
-.explorer h2 {
-  margin-top: 2rem;
-  font-size: large;
-}
-
-.explorer p {
-  font-size: medium;
+h1 a {
+  text-decoration: none;
+  color: #000000;
 }
 
 .btn__explorer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+  color: white;
+  font-weight: 300;
+  border: none;
+  border-radius: 2rem;
   margin-top: 30px;
   padding: 1rem 2rem;
-  border-radius: 50px;
-  border: none;
-  color: white;
-  font-weight: 400;
+  background-image: linear-gradient(to top, #9356dc, #b35cdc, #e86edb, #ff79da);
+  box-shadow: 2px 1px 8px -3px #000000;
+  transition: transform 180ms;
+  opacity: 1;
+}
+.btn__explorer:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 .explorer {
@@ -73,6 +70,71 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.fonctionnement {
+  counter-reset: steps;
+}
+.fonctionnement h2 {
+  padding: 0.5rem;
+}
+.fonctionnement ol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+@media (min-width: 800px) {
+  .fonctionnement ol {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.fonctionnement ol li {
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  position: relative;
+  list-style-type: none;
+  display: flex;
+  background-color: #f6f6f6;
+  opacity: 1;
+  padding: 1.5rem 2rem;
+  flex-grow: 1;
+  border-radius: 1.5rem;
+  box-shadow: 2px 1px 8px -3px #000000;
+}
+.fonctionnement ol li:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+.fonctionnement ol li:hover i.fas {
+  color: #b35cdc;
+}
+.fonctionnement ol li::before {
+  content: counter(steps);
+  counter-increment: steps;
+  width: 2rem;
+  height: 2rem;
+  bottom: 2rem;
+  left: -1rem;
+  background-color: #b35cdc;
+  border-radius: 50%;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 400;
+}
+.fonctionnement ol i.fas {
+  margin-right: 1rem;
+}
+.fonctionnement .main__header {
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 3px 1px 1px rgb(164, 164, 164);
+  padding: 0.3rem;
 }
 
 /*# sourceMappingURL=style.css.map */
