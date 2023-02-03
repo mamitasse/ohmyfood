@@ -1,0 +1,69 @@
+img {
+  @include image;
+}
+
+.card {
+  @include card;
+}
+.card a {
+  text-decoration: none;
+  color: black;
+}
+figcaption {
+  margin: 0;
+  padding: 10px;
+}
+
+figure {
+  margin: 0;
+}
+.card {
+ 
+  &__heart {
+    position: absolute;
+    bottom: 4rem;
+    right: 2rem;
+    &:hover {
+      color: red;
+    }
+  }
+ 
+}
+.new {
+  color: #008766;
+  background: #99e2d0;
+  border: 5px solid #99e2d0;
+  border-radius: 5px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.restaurants{
+  background-color: #f6f6f6;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 5rem;
+  
+ 
+    & h2{
+      padding: 0.5rem;
+    
+    }
+   
+   &__first{
+    @include desktop{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    } }
+   
+   &__second{
+     @include desktop{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+     } }
+
+   }
+
+

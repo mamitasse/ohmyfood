@@ -9,7 +9,7 @@
      gap: 2rem;
      margin-left: 1rem;
      margin-right: 1rem;
-     @media (min-width: 800px) {
+   @include desktop{
        flex-direction: row;
        justify-content: center;
      }
