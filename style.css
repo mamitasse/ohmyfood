@@ -15,7 +15,8 @@
   top: 0;
   left: 0;
   pointer-events: none;
-  animation: loader 1s ease-in-out 3s forwards;
+  -webkit-animation: loader 1s ease-in-out 3s forwards;
+          animation: loader 1s ease-in-out 3s forwards;
 }
 
 .loader__food {
@@ -37,39 +38,48 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  animation: rotate 1s linear infinite;
+  -webkit-animation: rotate 1s linear infinite;
+          animation: rotate 1s linear infinite;
 }
 
 .loader__food span:nth-child(1) {
-  animation: grow 1s ease-in-out infinite;
+  -webkit-animation: grow 1s ease-in-out infinite;
+          animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(2) {
-  animation: grow 1s ease-in-out 0.15s infinite;
+  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
+          animation: grow 1s ease-in-out 0.15s infinite;
 }
 
 .loader__food span:nth-child(3) {
-  animation: grow 1s ease-in-out 0.15s infinite;
+  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
+          animation: grow 1s ease-in-out 0.15s infinite;
 }
 
 .loader__food span:nth-child(4) {
-  animation: grow 1s ease-in-out 0.15s infinite;
+  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
+          animation: grow 1s ease-in-out 0.15s infinite;
 }
 
 .loader__food span:nth-child(5) {
-  animation: grow 1s ease-in-out 0.15s infinite;
+  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
+          animation: grow 1s ease-in-out 0.15s infinite;
 }
 
 .loader__food span:nth-child(6) {
-  animation: grow 1s ease-in-out 0.15s infinite;
+  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
+          animation: grow 1s ease-in-out 0.15s infinite;
 }
 
 .loader__food span:nth-child(7) {
-  animation: grow 1s ease-in-out 0.15s infinite;
+  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
+          animation: grow 1s ease-in-out 0.15s infinite;
 }
 
 .loader__food span:nth-child(8) {
-  animation: grow 1s ease-in-out 0.15s infinite;
+  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
+          animation: grow 1s ease-in-out 0.15s infinite;
 }
 
 .city {
@@ -215,7 +225,8 @@ h1 a {
 }
 
 img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   width: 100%;
@@ -318,6 +329,4 @@ footer h3 {
 
 .fa-hands-helping {
   margin-right: 5px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
