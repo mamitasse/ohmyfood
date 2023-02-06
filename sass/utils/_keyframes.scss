@@ -10,12 +10,14 @@
     0%,100% {
       -webkit-transform: scaleY(1);
       transform: scaleY(1);
+      transform: translateX(1);
     }
   
     50%{
       -webkit-transform: scaleY(1.8);
       transform: scaleY(1.8);
-    }
+      transform: translateX(-10rem);
+    }  
   }
   @keyframes loader {
     0% {

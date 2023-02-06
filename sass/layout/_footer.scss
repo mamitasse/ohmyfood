@@ -1,0 +1,28 @@
+footer{
+    background-color: #353535;
+    list-style-type: none;
+    padding: 25px;
+    flex-grow: 1;
+    & li{  
+    padding: 0.5rem;
+    }
+    & a{
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+    font-weight: 400;
+}
+    & h3{
+        font-family: shrikhand, cursive;
+        color: white;
+        padding: 0.3rem;
+        padding-left: 1.6rem;
+        font-weight: 400;
+    }
+}
+.fa-utensils {
+    margin-right: 12px;
+  }
+  .fa-hands-helping {
+    margin-right: 5px;
+  }

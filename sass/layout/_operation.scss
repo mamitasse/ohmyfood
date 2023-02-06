@@ -1,9 +1,13 @@
 .fonctionnement {
+  margin-left: 1.5;
+  margin-right: 1.5;
+  flex-grow: 1;
    & h2 {
      padding: 0.5rem;
    }
    counter-reset: steps;
    & ol {
+    flex-grow: 1;
      display: flex;
      flex-direction: column;
      gap: 2rem;
@@ -11,7 +15,7 @@
      margin-right: 1rem;
    @include desktop{
        flex-direction: row;
-       justify-content: center;
+       justify-content: space-between;
      }
      & li {
        align-items: baseline;
@@ -40,12 +44,12 @@
          height: 2rem;
          bottom: 2rem;
          left: -1rem;
-         background-color: #b35cdc;
+         background-color: $primary;
          border-radius: 50%;
          position: absolute;
          display: grid;
          place-items: center;
-         color: white;
+         color: $white;
          font-weight: 400;
        }
  

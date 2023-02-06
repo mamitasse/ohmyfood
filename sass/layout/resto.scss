@@ -2,9 +2,6 @@ img {
   @include image;
 }
 
-.card {
-  @include card;
-}
 .card a {
   text-decoration: none;
   color: black;
@@ -18,52 +15,54 @@ figure {
   margin: 0;
 }
 .card {
- 
+  @include card;
+  flex-grow: 1;
+  max-width: 30rem;
   &__heart {
     position: absolute;
     bottom: 4rem;
     right: 2rem;
+    @include desktop{
+      bottom: 2rem;
+    }
     &:hover {
-      color: red;
+      &::before{
+        
+      }
     }
   }
  
 }
 .new {
   color: #008766;
-  background: #99e2d0;
-  border: 5px solid #99e2d0;
+  background: $tertiary;
+  border: 5px solid $tertiary;
   border-radius: 5px;
   position: absolute;
   right: 1rem;
   top: 1rem;
 }
 .restaurants{
+  flex-grow: 1;
   background-color: #f6f6f6;
-  margin-left: 1rem;
-  margin-right: 1rem;
   margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
   
- 
-    & h2{
+   & h2{
+    margin-bottom: 2rem;
       padding: 0.5rem;
-    
+     }
+     &__cards{
+      flex-grow: 1;
+      @include desktop{
+        display: flex;
+        flex-direction: row;
+        min-width: 30rem;
+        flex-wrap: wrap;
+      } }
     }
-   
-   &__first{
-    @include desktop{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    } }
-   
-   &__second{
-     @include desktop{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-     } }
 
-   }
+   
 
 

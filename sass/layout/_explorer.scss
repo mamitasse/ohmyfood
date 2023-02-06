@@ -1,12 +1,12 @@
 
 .btn__explorer {
-    color:$tertiary;
+    color:$white;
     font-weight: 300;
     border: none;
     border-radius: 2rem;
     margin-top: 30px;
     padding: 1rem 2rem;
-    background-image: linear-gradient(to top, #9356dc, #b35cdc, #e86edb, #ff79da);
+    background-image: linear-gradient(to top, $primary, #b35cdc, #e86edb, #ff79da);
     @include base-shadow;
     transition: transform 180ms;
     opacity: 1;
