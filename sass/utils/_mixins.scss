@@ -30,3 +30,6 @@
           @content;
         }
       }
+      @mixin gradientRose{
+        background-image: linear-gradient(to top, $primary, #b35cdc, #e86edb, #ff79da);
+      }

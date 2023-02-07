@@ -226,10 +226,19 @@ main {
   font-size: 2rem;
   opacity: 0;
 }
-.fa-solid:hover {
-  color: #9356DC;
-  opacity: 0;
-  animation: coeur 3s;
+.fa-solid:active:hover {
+  opacity: 1;
+  background: linear-gradient(to bottom, #9356DC, #b35cdc, #e86edb, #ff79da);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+@media screen and (min-width: 951px) {
+  .fa-solid:hover {
+    opacity: 1;
+    background: linear-gradient(to bottom, #9356DC, #b35cdc, #e86edb, #ff79da);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
 }
 
 .fa-regular {
@@ -239,7 +248,7 @@ main {
   font-size: 2rem;
 }
 .fa-regular:hover {
-  opacity: 0;
+  color: transparent;
 }
 
 .new {

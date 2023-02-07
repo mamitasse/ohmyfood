@@ -8,11 +8,23 @@
     right: 2rem;
     font-size: 2rem;
     opacity: 0;
-    &:hover{
-      color: $primary;
-      opacity: 0;
-      animation: coeur 3s;
+    &:active{
+      &:hover{
+        opacity: 1;
+        background: linear-gradient(to bottom, $primary, #b35cdc, #e86edb, #ff79da);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      }
     }
+@include desktop{
+  &:hover{
+    opacity: 1;
+    background: linear-gradient(to bottom, $primary, #b35cdc, #e86edb, #ff79da);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  }
+}
+
   
 }
 .fa-regular{
@@ -21,7 +33,7 @@
     right: 2rem;
     font-size: 2rem;
     &:hover{
-     opacity: 0;
+      color: transparent;
     }
    }
   
