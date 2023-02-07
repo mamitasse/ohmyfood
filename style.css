@@ -15,8 +15,7 @@
   top: 0;
   left: 0;
   pointer-events: none;
-  -webkit-animation: loader 1s ease-in-out 3s forwards;
-          animation: loader 1s ease-in-out 3s forwards;
+  animation: loader 1s ease-in-out 3s forwards;
 }
 
 .loader__food {
@@ -38,48 +37,39 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-animation: rotate 1s linear infinite;
-          animation: rotate 1s linear infinite;
+  animation: rotate 1s linear infinite;
 }
 
 .loader__food span:nth-child(1) {
-  -webkit-animation: grow 1s ease-in-out infinite;
-          animation: grow 1s ease-in-out infinite;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(2) {
-  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
-          animation: grow 1s ease-in-out 0.15s infinite;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(3) {
-  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
-          animation: grow 1s ease-in-out 0.15s infinite;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(4) {
-  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
-          animation: grow 1s ease-in-out 0.15s infinite;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(5) {
-  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
-          animation: grow 1s ease-in-out 0.15s infinite;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(6) {
-  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
-          animation: grow 1s ease-in-out 0.15s infinite;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(7) {
-  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
-          animation: grow 1s ease-in-out 0.15s infinite;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(8) {
-  -webkit-animation: grow 1s ease-in-out 0.15s infinite;
-          animation: grow 1s ease-in-out 0.15s infinite;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .city {
@@ -118,6 +108,11 @@ body {
   font-family: roboto;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 h1 {
   font-family: shrikhand, cursive;
   text-align: center;
@@ -129,6 +124,10 @@ h1 {
 h1 a {
   text-decoration: none;
   color: #000000;
+}
+
+main {
+  margin: 0px;
 }
 
 .btn__explorer {
@@ -156,26 +155,22 @@ h1 a {
 }
 
 .fonctionnement {
-  margin-left: 1.5;
-  margin-right: 1.5;
-  flex-grow: 1;
+  margin: 2rem;
   counter-reset: steps;
 }
-.fonctionnement h2 {
-  padding: 0.5rem;
-}
 .fonctionnement ol {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
-@media screen and (min-width: 851px) {
+@media screen and (min-width: 951px) {
   .fonctionnement ol {
-    flex-direction: row;
-    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1300px) {
+  .fonctionnement ol {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .fonctionnement ol li {
@@ -187,10 +182,13 @@ h1 a {
   display: flex;
   background-color: #f6f6f6;
   opacity: 1;
-  padding: 1.5rem 2rem;
-  flex-grow: 1;
+  padding: 1rem 2rem;
   border-radius: 1.5rem;
   box-shadow: 2px 1px 8px -3px #000000;
+}
+.fonctionnement ol li i.fas {
+  margin-right: 0.5rem;
+  font-size: 2rem;
 }
 .fonctionnement ol li:hover {
   transform: scale(1.02);
@@ -214,9 +212,6 @@ h1 a {
   color: white;
   font-weight: 400;
 }
-.fonctionnement ol i.fas {
-  margin-right: 1rem;
-}
 .fonctionnement .main__header {
   text-align: center;
   position: relative;
@@ -224,51 +219,34 @@ h1 a {
   padding: 0.3rem;
 }
 
-img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  width: 100%;
-  height: 200%;
-  max-height: 190px;
-}
-
-.card a {
-  text-decoration: none;
-  color: black;
-}
-
-figcaption {
-  margin: 0;
-  padding: 10px;
-}
-
-figure {
-  margin: 0;
-}
-
-.card {
-  border-radius: 25px;
-  box-shadow: 4px 4px 6px #aaa;
-  margin: 20px;
-  position: relative;
-  background: white;
-  flex-grow: 1;
-  max-width: 30rem;
-}
-.card__heart {
+.fa-solid {
   position: absolute;
   bottom: 4rem;
   right: 2rem;
+  font-size: 2rem;
+  opacity: 0;
 }
-@media screen and (min-width: 851px) {
-  .card__heart {
-    bottom: 2rem;
-  }
+.fa-solid:hover {
+  color: #9356DC;
+  opacity: 0;
+  animation: coeur 3s;
 }
+
+.fa-regular {
+  position: absolute;
+  bottom: 4rem;
+  right: 2rem;
+  font-size: 2rem;
+}
+.fa-regular:hover {
+  opacity: 0;
+}
+
 .new {
-  color: #008766;
+  position: relative;
+}
+.new::before {
+  content: "nouveau";
   background: #99E2D0;
   border: 5px solid #99E2D0;
   border-radius: 5px;
@@ -278,26 +256,59 @@ figure {
 }
 
 .restaurants {
-  flex-grow: 1;
   background-color: #f6f6f6;
-  margin-top: 5rem;
-  display: flex;
-  flex-direction: column;
+  margin: 2rem;
 }
-.restaurants h2 {
-  margin-bottom: 2rem;
-  padding: 0.5rem;
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
 }
-.restaurants__cards {
-  flex-grow: 1;
-}
-@media screen and (min-width: 851px) {
-  .restaurants__cards {
-    display: flex;
-    flex-direction: row;
-    min-width: 30rem;
-    flex-wrap: wrap;
+@media screen and (min-width: 951px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+@media screen and (min-width: 1300px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  border-radius: 10% 10% 0 0;
+  box-shadow: 4px 4px 6px #aaa;
+  background: white;
+  border-radius: 10%;
+  position: relative;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+.card__image {
+  border-radius: 10% 10% 0 0;
+  background-size: cover;
+  height: 13rem;
+}
+.card__description {
+  padding: 1rem;
+}
+
+.card__image-1 {
+  background-image: url(./img/restaurants/image-1.jpg);
+}
+
+.card__image-2 {
+  background-image: url(./img/restaurants/image-2.jpg);
+}
+
+.card__image-3 {
+  background-image: url(./img/restaurants/image-3.jpg);
+}
+
+.card__image-4 {
+  background-image: url(./img/restaurants/image-4.jpg);
 }
 
 footer {
@@ -329,4 +340,6 @@ footer h3 {
 
 .fa-hands-helping {
   margin-right: 5px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

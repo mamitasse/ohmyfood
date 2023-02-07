@@ -1,66 +1,84 @@
-img {
-  @include image;
-}
 
-.card a {
-  text-decoration: none;
-  color: black;
-}
-figcaption {
-  margin: 0;
-  padding: 10px;
-}
 
-figure {
-  margin: 0;
-}
-.card {
-  @include card;
-  flex-grow: 1;
-  max-width: 30rem;
-  &__heart {
+
+    
+  .fa-solid{
     position: absolute;
     bottom: 4rem;
     right: 2rem;
-    @include desktop{
-      bottom: 2rem;
+    font-size: 2rem;
+    opacity: 0;
+    &:hover{
+      color: $primary;
+      opacity: 0;
+      animation: coeur 3s;
     }
-    &:hover {
-      &::before{
-        
-      }
-    }
-  }
- 
+  
 }
+.fa-regular{
+    position: absolute;
+    bottom: 4rem;
+    right: 2rem;
+    font-size: 2rem;
+    &:hover{
+     opacity: 0;
+    }
+   }
+  
+  
+
+
 .new {
-  color: #008766;
-  background: $tertiary;
+  position: relative;
+  &::before{
+    content: "nouveau";
+    background: $tertiary;
   border: 5px solid $tertiary;
   border-radius: 5px;
   position: absolute;
   right: 1rem;
   top: 1rem;
+  }
+  
 }
 .restaurants{
-  flex-grow: 1;
   background-color: #f6f6f6;
-  margin-top: 5rem;
-  display: flex;
-  flex-direction: column;
-  
-   & h2{
-    margin-bottom: 2rem;
-      padding: 0.5rem;
-     }
-     &__cards{
-      flex-grow: 1;
-      @include desktop{
-        display: flex;
-        flex-direction: row;
-        min-width: 30rem;
-        flex-wrap: wrap;
-      } }
+  margin: 2rem;
+}
+.cards{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 2rem;
+  @include desktop{
+      grid-template-columns: repeat(2,1fr);
+}
+@include large {
+  grid-template-columns: repeat(4,1fr);
+}
+}
+.card{
+  border-radius: 10% 10% 0 0;
+  box-shadow: 4px 4px 6px #aaa;
+  background: #ffff;
+  border-radius:10%;
+  position: relative;
+  &:hover{
+    @include zoom;
+  }
+  &__image{
+      border-radius: 10% 10% 0 0;
+      background-size: cover;
+      height: 13rem;
+   }
+   &__description{
+   padding: 1rem;
+   }
+  }
+  @for $i from 1 through 4{
+    .card__image-#{$i}{
+        background-image: url(./img/restaurants/image-#{$i}.jpg);
     }
+     }   
 
+  
 
