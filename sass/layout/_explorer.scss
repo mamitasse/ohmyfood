@@ -1,23 +1,29 @@
-
 .btn__explorer {
-    color:$white;
-    font-weight: 300;
-    border: none;
-    border-radius: 2rem;
-    margin-top: 30px;
-    padding: 1rem 2rem;
-    background-image: linear-gradient(to top, $primary, #b35cdc, #e86edb, #ff79da);
-    @include base-shadow;
-    transition: transform 180ms;
-    opacity: 1;
-    &:hover {
-      @include zoom;
-      opacity: 0.9;
-    }
+  color: $white;
+  font-weight: 300;
+  border: none;
+  border-radius: 2rem;
+  margin-top: 30px;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(
+    to top,
+    $primary,
+    #b35cdc,
+    #e86edb,
+    #ff79da
+  );
+  @include base-shadow;
+  transition: transform 180ms;
+  opacity: 1;
+  &:hover {
+    @include dark-shadow;
+    @include zoom;
+    opacity: 0.8;
   }
-  .explorer {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+}
+.explorer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

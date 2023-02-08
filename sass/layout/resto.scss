@@ -1,96 +1,94 @@
-
-
-
-    
-  .fa-solid{
-    position: absolute;
-    bottom: 4rem;
-    right: 2rem;
-    font-size: 2rem;
-    opacity: 0;
-    &:active{
-      &:hover{
-        opacity: 1;
-        background: linear-gradient(to bottom, $primary, #b35cdc, #e86edb, #ff79da);
+.fa-solid {
+  position: absolute;
+  bottom: 4rem;
+  @include desktop {
+    bottom: 1rem;
+  }
+  right: 2rem;
+  font-size: 2rem;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  &:active {
+    animation: coeur 10s;
+    background: linear-gradient(to bottom, $primary, #b35cdc, #e86edb, #ff79da);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  @include desktop {
+    &:hover {
+      opacity: 1;
+      background: linear-gradient(
+        to bottom,
+        $primary,
+        #b35cdc,
+        #e86edb,
+        #ff79da
+      );
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
-      }
     }
-@include desktop{
-  &:hover{
-    opacity: 1;
-    background: linear-gradient(to bottom, $primary, #b35cdc, #e86edb, #ff79da);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
   }
 }
-
-  
+.fa-regular {
+  position: absolute;
+  bottom: 4rem;
+  right: 2rem;
+  @include desktop {
+    bottom: 1rem;
+  }
+  font-size: 2rem;
+  &:hover {
+    color: transparent;
+  }
 }
-.fa-regular{
-    position: absolute;
-    bottom: 4rem;
-    right: 2rem;
-    font-size: 2rem;
-    &:hover{
-      color: transparent;
-    }
-   }
-  
-  
-
 
 .new {
   position: relative;
-  &::before{
+  &::before {
     content: "nouveau";
     background: $tertiary;
-  border: 5px solid $tertiary;
-  border-radius: 5px;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+    border: 5px solid $tertiary;
+    border-radius: 5px;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
   }
-  
 }
-.restaurants{
+.restaurants {
   background-color: #f6f6f6;
   margin: 2rem;
 }
-.cards{
+.cards {
   display: grid;
-  grid-template-columns: repeat(1,1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
-  @include desktop{
-      grid-template-columns: repeat(2,1fr);
+  @include desktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include large {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
-@include large {
-  grid-template-columns: repeat(4,1fr);
-}
-}
-.card{
+.card {
   border-radius: 10% 10% 0 0;
   box-shadow: 4px 4px 6px #aaa;
   background: #ffff;
-  border-radius:10%;
+  border-radius: 10%;
   position: relative;
-  &:hover{
+  &:hover {
     @include zoom;
   }
-  &__image{
-      border-radius: 10% 10% 0 0;
-      background-size: cover;
-      height: 13rem;
-   }
-   &__description{
-   padding: 1rem;
-   }
+  &__image {
+    border-radius: 10% 10% 0 0;
+    background-size: cover;
+    height: 13rem;
   }
-  @for $i from 1 through 4{
-    .card__image-#{$i}{
-        background-image: url(./img/restaurants/image-#{$i}.jpg);
-    }
-     }   
-
-  
-
+  &__description {
+    padding: 1rem;
+  }
+}
+@for $i from 1 through 4 {
+  .card__image-#{$i} {
+    background-image: url(./img/restaurants/image-#{$i}.jpg);
+  }
+}

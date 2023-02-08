@@ -1,5 +1,8 @@
 @mixin base-shadow{
-    box-shadow: 2px 1px 8px -3px #000000;
+    box-shadow: 2px 1px 8px -3px #3f3b3b;
+}
+@mixin dark-shadow{
+  box-shadow: 5px 3px 8px 3px #0000;
 }
 @mixin zoom{
     transform:scale(1.02);

@@ -138,13 +138,14 @@ main {
   margin-top: 30px;
   padding: 1rem 2rem;
   background-image: linear-gradient(to top, #9356DC, #b35cdc, #e86edb, #ff79da);
-  box-shadow: 2px 1px 8px -3px #000000;
+  box-shadow: 2px 1px 8px -3px #3f3b3b;
   transition: transform 180ms;
   opacity: 1;
 }
 .btn__explorer:hover {
+  box-shadow: 5px 3px 8px 3px rgba(0, 0, 0, 0);
   transform: scale(1.02);
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .explorer {
@@ -184,7 +185,7 @@ main {
   opacity: 1;
   padding: 1rem 2rem;
   border-radius: 1.5rem;
-  box-shadow: 2px 1px 8px -3px #000000;
+  box-shadow: 2px 1px 8px -3px #3f3b3b;
 }
 .fonctionnement ol li i.fas {
   margin-right: 0.5rem;
@@ -225,9 +226,15 @@ main {
   right: 2rem;
   font-size: 2rem;
   opacity: 0;
+  transition: all 200ms ease-in-out;
 }
-.fa-solid:active:hover {
-  opacity: 1;
+@media screen and (min-width: 951px) {
+  .fa-solid {
+    bottom: 1rem;
+  }
+}
+.fa-solid:active {
+  animation: coeur 10s;
   background: linear-gradient(to bottom, #9356DC, #b35cdc, #e86edb, #ff79da);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -246,6 +253,11 @@ main {
   bottom: 4rem;
   right: 2rem;
   font-size: 2rem;
+}
+@media screen and (min-width: 951px) {
+  .fa-regular {
+    bottom: 1rem;
+  }
 }
 .fa-regular:hover {
   color: transparent;

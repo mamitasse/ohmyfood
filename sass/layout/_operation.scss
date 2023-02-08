@@ -32,6 +32,7 @@
        &:hover {
          @include zoom;
          opacity: 0.9;
+       
          & i.fas{
              color: #b35cdc;
            }
