@@ -1,6 +1,3 @@
-.btn__explorer {
-  @include btn;
-}
 .explorer {
   align-items: center;
   display: flex;

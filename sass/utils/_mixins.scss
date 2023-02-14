@@ -1,12 +1,42 @@
+/*---------mixins ombre entete---------*/
 @mixin base-shadow{
     box-shadow: 2px 1px 8px -3px #3f3b3b;
 }
+/*---------mixins ombre cartes restos---------*/
 @mixin dark-shadow{
   box-shadow: 5px 3px 8px 3px #0000;
 }
+/*---------mixins pour zoomer---------*/
 @mixin zoom{
     transform:scale(1.02);
 }
+/*-----------mixins bouton----------*/
+@mixin btn{
+  
+    color: $white;
+    font-weight: 300;
+    border: none;
+    border-radius: 2rem;
+    margin-top: 30px;
+    padding: 1rem 2rem;
+    background-image: linear-gradient(
+      to top,
+      $primary,
+      #b35cdc,
+      #e86edb,
+      #ff79da
+    );
+    @include base-shadow;
+    transition: transform 180ms;
+    opacity: 1;
+    &:hover {
+      @include dark-shadow;
+      @include zoom;
+      opacity: 0.8;
+    }
+  }
+
+/*-----------mixins cartes restaurants----------*/
 @mixin image{
     object-fit: cover;
     border-top-left-radius: 25px;
@@ -23,6 +53,44 @@
         position: relative;
         background: #ffff;
       }
+      /*------------mixins coeurs icon------------*/
+      @mixin fa-solid{
+        position: absolute;
+        bottom: 4rem;
+        @include desktop {
+          bottom: 1rem;
+        }
+        right: 2rem;
+        font-size: 2rem;
+        opacity: 0;
+        transition: all 200ms ease-in-out;
+        &:hover {
+          animation: coeurs 1s;
+          opacity: 1;
+          background: linear-gradient(to bottom,
+              $primary,
+              #b35cdc,
+              #e86edb,
+              #ff79da);
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+        }
+        }
+        @mixin fa-regular {
+          position: absolute;
+          bottom: 4rem;
+          right: 2rem;
+          opacity: 1;
+          @include desktop {
+          bottom: 1rem;
+          }
+          font-size: 2rem;
+          &:hover {
+            opacity: 0;
+            color: transparent;
+          }
+        }
+        /*--------------------*/
       @mixin desktop {
         @media screen and (min-width:map-get($breakpoints, desktop)){
           @content;
@@ -35,4 +103,55 @@
       }
       @mixin gradientRose{
         background-image: linear-gradient(to top, $primary, #b35cdc, #e86edb, #ff79da);
+      }   
+
+            /*-----------------------------------------------------------------*/
+            @mixin gradient($opacity: 0.9) {
+              background-image: linear-gradient(
+                to top,
+                rgba(147, 86, 220, $opacity),
+                rgba(255, 121, 218, $opacity)
+              );
+            }
+      @mixin font-awesome($font-weight: 400) {
+        display: inline-block;
+        position: absolute;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free";
+        font-weight: $font-weight;
       }
+
+      @mixin heart($opacity: 1, $font-weight: 400, $color: inherit) {
+        @include font-awesome($font-weight);
+        content: "\f004";
+        font-size: 2rem;
+        right: 2rem;
+        top:2rem;
+        transform: translateY(-50%);
+        color: $color;
+        background-clip: text;
+        -webkit-background-clip: text;
+        opacity: $opacity;
+        transition: all 200ms ease-in-out;
+      }
+      
+      @mixin heart-animated {
+        position: relative;
+        background-color: white;
+        border-radius: 0 0 1rem 1rem;
+        &::before {
+          @include heart;
+        }
+        &::after {
+          @include heart($opacity: 0, $font-weight: 900, $color: transparent);
+          @include gradient(1);
+        }
+        &:hover::after {
+          opacity: 1;
+          transform: translateY(-50%) scale(1.3);
+        }
+      }  
+    

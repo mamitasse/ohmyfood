@@ -1,0 +1,12 @@
+
+
+  .carteRestaurant__title {
+    margin-top: -2rem;
+    h2 {
+      font-family: "Shrikhand", "cursive";
+      padding: 2rem 1rem;
+      @include mixins.heart-animated;
+      border-radius: 2rem 2rem 0 0;
+      background-color: colors.$lightergrey;
+    }
+  }

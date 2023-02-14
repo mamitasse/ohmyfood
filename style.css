@@ -1,8 +1,16 @@
+/*---------mixins ombre entete---------*/
+/*---------mixins ombre cartes restos---------*/
+/*---------mixins pour zoomer---------*/
+/*-----------mixins bouton----------*/
+/*-----------mixins cartes restaurants----------*/
+/*------------mixins coeurs icon------------*/
+/*--------------------*/
+/*-----------------------------------------------------------------*/
 @import "./sass/utils/_keyframes.css";
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@400;500&family=Shrikhand&display=swap");
 .loader {
-  background: -webkit-linear-gradient(#FFFFFF, #99E2D0, #FF79DA, #9356DC);
+  background-image: linear-gradient(to top, #9356DC, #FF79DA, #99E2D0, #96036d);
   width: 100%;
   height: 100%;
   line-height: 100%;
@@ -15,7 +23,7 @@
   top: 0;
   left: 0;
   pointer-events: none;
-  animation: loader 1s ease-in-out 3s forwards;
+  animation: loader 1s ease-in-out 1s forwards;
 }
 
 .loader__food {
@@ -37,7 +45,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  animation: rotate 1s linear infinite;
+  animation: rotate 0.5s linear infinite;
 }
 
 .loader__food span:nth-child(1) {
@@ -226,7 +234,7 @@ main {
   right: 2rem;
   font-size: 2rem;
   opacity: 0;
-  transition: all 200ms ease-in-out;
+  transition: all 1s ease-in-out;
 }
 @media screen and (min-width: 951px) {
   .fa-solid {
@@ -234,8 +242,9 @@ main {
   }
 }
 .fa-solid:hover {
-  animation: coeurs 4s;
+  animation: coeurs 0.5s;
   opacity: 1;
+  color: transparent;
   background: linear-gradient(to bottom, #9356DC, #b35cdc, #e86edb, #ff79da);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -254,8 +263,7 @@ main {
   }
 }
 .fa-regular:hover {
-  opacity: 0;
-  color: transparent;
+  animation: coeurs 0.5s;
 }
 
 .new {
@@ -358,59 +366,187 @@ footer h3 {
   margin-right: 5px;
 }
 
-.main__image-3 img {
-  object-fit: cover;
-  flex-grow: 1;
-  width: 100%;
-  height: 90vh;
-  object-position: bottom;
-}
-
-.main__menu {
-  width: 100%;
-  border-radius: 60px 60px 0 0;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background-color: #f3f3f3;
-  margin-top: -76px;
-  position: relative;
-}
-.main__menu h2 {
-  font-family: "shrikhand", "cursive";
-}
-.main__menu::before {
-  content: " \f004";
-  font-family: "Font Awesome 6 Free";
-  display: block;
+.main__header ::before {
+  display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f060";
   font-size: 2rem;
-  position: absolute;
-  right: 2rem;
-  top: 3rem;
+  left: 2rem;
+  top: 1rem;
+  color: black;
+  background-clip: text;
+  -webkit-background-clip: text;
   opacity: 1;
+}
+
+.mains__image img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 90vh;
+  object-position: center bottom;
+}
+
+.carteRestaurant {
+  border-radius: 60px 60px 0 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #f6f6f6;
+  margin-top: -76px;
+  position: relative;
+}
+.carteRestaurant__title {
+  margin-top: -2rem;
+}
+.carteRestaurant__title h2 {
+  font-family: "Shrikhand", "cursive";
+  padding: 1rem;
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 1rem 1rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f3f3f3;
+}
+.carteRestaurant__title h2::before {
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  font-size: 2rem;
+  right: 2rem;
+  top: 2rem;
+  transform: translateY(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+}
+.carteRestaurant__title h2::after {
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  font-size: 2rem;
+  right: 2rem;
+  top: 2rem;
+  transform: translateY(-50%);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  background: linear-gradient(to bottom, #0c0c0c, #49454a, #4e4c4d, #4b4a4b);
-  color: transparent;
-  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
-.main__menu::before :hover {
-  font-weight: 900;
-  background: linear-gradient(to bottom, #9356dc, #b35cdc, #e86edb, #ff79da);
+.carteRestaurant__title h2:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.3);
 }
 
-.ligne {
+.line {
   border: 2px solid #99e2d0;
-  width: 40px;
-  margin-left: 10px;
+  width: 70px;
   height: 2px;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+.choix {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: white;
+  border-radius: 25px;
+  padding-bottom: 30px;
+  padding: 0px;
+  margin: 10px;
+  box-shadow: 4px 4px 6px rgba(170, 170, 170, 0.6666666667);
+  overflow: hidden;
+}
+.choix h4 {
+  padding-left: 20px;
+  padding-top: 10px;
+  margin: 0%;
+}
+.choix p {
+  padding-left: 20px;
+  margin: 0%;
+}
+.choix__price {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.choix__price span {
+  padding-top: 10px;
+}
+
+.category {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repaet(1, 1fr);
+  background-color: #f3f3f3;
+  gap: 10px;
+}
+@media screen and (min-width: 951px) {
+  .category {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.category h3 {
+  padding-left: 30px;
+}
+
+.btn__commander {
+  color: white;
+  font-weight: 300;
+  border: none;
+  border-radius: 2rem;
+  margin-top: 30px;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(to top, #9356DC, #b35cdc, #e86edb, #ff79da);
+  box-shadow: 2px 1px 8px -3px #3f3b3b;
+  transition: transform 180ms;
+  opacity: 1;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.btn__commander:hover {
+  box-shadow: 5px 3px 8px 3px rgba(0, 0, 0, 0);
+  transform: scale(1.02);
+  opacity: 0.8;
+}
+
+.bouton {
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+.cross {
+  width: 60px;
+  background-color: red;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 0.5rem;
+  visibility: collapse;
 }
 
 /*# sourceMappingURL=style.css.map */
