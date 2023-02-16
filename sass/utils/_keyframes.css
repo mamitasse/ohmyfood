@@ -45,3 +45,12 @@
     transform: scale(1.2);
   }
 }
+
+@keyframes rotatecross {
+  0% {
+    transform: rotate(-270°);
+  }
+  100% {
+    transform: rotate(0°);
+  }
+}

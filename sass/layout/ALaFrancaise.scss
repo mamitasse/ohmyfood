@@ -1,3 +1,6 @@
+.mains{
+
+}
 .main__header {
   & ::before {
     display: inline-block;
@@ -27,7 +30,63 @@
     object-position: center bottom;
   }
 }
-.carteRestaurant {
+.carteRestaurant{
+  border-radius: 60px 60px 0 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: $backgroundmoyen;
+  margin-top: -76px;
+  position: relative;
+    &__title{
+      h2{ 
+    font-family: "Shrikhand", "cursive";
+    @include heart-animated;
+    margin: 0%;
+ padding-left: 1rem;
+ padding-top: 1rem;
+ border-radius: 0%;
+ background-color: $backgroundmoyen;
+  }
+}
+}
+.category{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  @include desktop{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    h3 {
+      padding-left: 1rem;
+      font-weight: 400;
+      position: relative;
+      margin-bottom: 1rem;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 2rem;
+        left: 1rem;
+        height: 0.2rem;
+        width: 3.5rem;
+        background: green;
+      }
+    }
+  }
+  .menu{
+    
+  }
+  .choix{
+    overflow: hidden;
+    display: flex;
+    background-color:transparent;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 0.5rem;
+    @include base-shadow;
+ }
+}
+
+
+/*.carteRestaurant {
   border-radius: 60px 60px 0 0;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -36,10 +95,15 @@
   position: relative;
 
   &__title {
-    margin-top: -2rem;
+    .h2{
+   font-family: "Shrikhand", "cursive";
+      padding: 1rem;
+      @include heart-animated;
+      border-radius: 2rem 2rem 0 0;
+      background-color: $backgroundClair;
     h2 {
       font-family: "Shrikhand", "cursive";
-      padding: 1rem  ;
+      padding: 1rem;
       @include heart-animated;
       border-radius: 2rem 2rem 0 0;
       background-color: $backgroundClair;
@@ -54,10 +118,17 @@
   margin-left: 30px;
   margin-bottom: 15px;
 }
+@keyframes rotatecross {
+  0% {
+    transform: rotate(-270°);
+  }
+  100% {
+    transform: rotate(0°);
+  }
+}
 .choix {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex; 
+  flex-direction: row;
   background-color: white;
   border-radius: 25px;
   padding-bottom: 30px;
@@ -65,32 +136,58 @@
   margin: 10px;
   box-shadow: 4px 4px 6px #aaaa;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  & :hover {
+    .choix__cross {
+      margin-right: 0rem;
+      & i {
+        animation: rotatecross 4s;
+      }
+    }
+  }
   & h4 {
     padding-left: 20px;
     padding-top: 10px;
     margin: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   & p {
     padding-left: 20px;
     margin: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   &__price {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    margin-left: auto;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     & span {
       padding-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 }
 
 .category {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: repaet(1, 1fr);
+
+  display: flex;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 0.5rem;
+  @include dark-shadow;
   background-color: $backgroundClair;
-  gap: 10px;
   @include desktop {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -108,12 +205,15 @@
   place-items: center;
   margin-bottom: 20px;
 }
-.cross {
-  width: 60px;
+.choix__cross {
+  margin-right: -4rem;
+  width: 4rem;
   background-color: red;
   color: white;
   display: grid;
   place-items: center;
   font-size: 0.5rem;
-  visibility: collapse;
+  overflow: hidden;
+  transition: margin-right 1s;
 }
+*/

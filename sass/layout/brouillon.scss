@@ -10,3 +10,134 @@
       background-color: colors.$lightergrey;
     }
   }
+  /*.carteRestaurant {
+  border-radius: 60px 60px 0 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #f6f6f6;
+  margin-top: -76px;
+  position: relative;
+
+  &__title {
+    .h2{
+   font-family: "Shrikhand", "cursive";
+      padding: 1rem;
+      @include heart-animated;
+      border-radius: 2rem 2rem 0 0;
+      background-color: $backgroundClair;
+    h2 {
+      font-family: "Shrikhand", "cursive";
+      padding: 1rem;
+      @include heart-animated;
+      border-radius: 2rem 2rem 0 0;
+      background-color: $backgroundClair;
+    }
+  }
+}
+
+.line {
+  border: 2px solid #99e2d0;
+  width: 70px;
+  height: 2px;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+@keyframes rotatecross {
+  0% {
+    transform: rotate(-270°);
+  }
+  100% {
+    transform: rotate(0°);
+  }
+}
+.choix {
+  display: flex; 
+  flex-direction: row;
+  background-color: white;
+  border-radius: 25px;
+  padding-bottom: 30px;
+  padding: 0px;
+  margin: 10px;
+  box-shadow: 4px 4px 6px #aaaa;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  & :hover {
+    .choix__cross {
+      margin-right: 0rem;
+      & i {
+        animation: rotatecross 4s;
+      }
+    }
+  }
+  & h4 {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  & p {
+    padding-left: 20px;
+    margin: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  &__price {
+    margin-left: auto;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    & span {
+      padding-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.category {
+
+  display: flex;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 0.5rem;
+  @include dark-shadow;
+  background-color: $backgroundClair;
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  & h3 {
+    padding-left: 30px;
+  }
+}
+.btn__commander {
+  @include btn;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.bouton {
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+.choix__cross {
+  margin-right: -4rem;
+  width: 4rem;
+  background-color: red;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 0.5rem;
+  overflow: hidden;
+  transition: margin-right 1s;
+}
+*/

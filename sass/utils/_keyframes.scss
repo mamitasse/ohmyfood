@@ -45,3 +45,11 @@
     }
 
   }
+  @keyframes rotatecross{
+0%{
+  transform: rotate(-270°);
+}
+100%{
+  transform: rotate(0°);
+}
+  }
