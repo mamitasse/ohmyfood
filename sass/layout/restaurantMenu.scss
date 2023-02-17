@@ -86,11 +86,12 @@ background-color: $backgroundmoyen;
         animation: appear 1s;
         animation-fill-mode: both;
          &:hover{
+          cursor: pointer;
           .menu-item__check {
             margin-right: 0;
           }
           i {
-              animation: quarterspin 0.5s ease-in-out;
+              animation:check 0.5s ease-in-out;
             }
       }
         }

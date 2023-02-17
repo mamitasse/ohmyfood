@@ -81,7 +81,7 @@
 }
 
 .city {
-  background-color: #f3f3f3;
+  background-color: #f6f6f6;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -509,11 +509,14 @@ img {
 .menus__category .menu-item:nth-child(1) {
   animation-delay: 200ms;
 }
+.menus__category .menu-item:hover {
+  cursor: pointer;
+}
 .menus__category .menu-item:hover .menu-item__check {
   margin-right: 0;
 }
 .menus__category .menu-item:hover i {
-  animation: quarterspin 0.5s ease-in-out;
+  animation: check 0.5s ease-in-out;
 }
 .menus__category .menu-item__price {
   margin-left: auto;

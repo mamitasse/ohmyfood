@@ -55,7 +55,7 @@
   }
 }
 
-@keyframes quarterspin {
+@keyframes check {
   0% {
     transform: rotate(-270deg);
   }

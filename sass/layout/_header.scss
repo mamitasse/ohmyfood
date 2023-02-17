@@ -3,8 +3,9 @@ header a{
     color: black;
 }
 header {
+  background-color: $backgroundclair;
   text-align: center;
   position: relative;
-  box-shadow: 0px 3px 1px 1px rgb(164, 164, 164);
+  box-shadow: 0px 3px 2px 2px $backgroundclair;
   padding: 0.3rem;
 }
