@@ -1,11 +1,10 @@
-@charset "UTF-8";
+/*--------------------*/
 /*---------mixins ombre entete---------*/
 /*---------mixins ombre cartes restos---------*/
 /*---------mixins pour zoomer---------*/
 /*-----------mixins bouton----------*/
 /*-----------mixins cartes restaurants----------*/
 /*------------mixins coeurs icon------------*/
-/*--------------------*/
 /*-----------------------------------------------------------------*/
 @import "./sass/utils/_keyframes.css";
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Shrikhand&display=swap");
@@ -367,6 +366,10 @@ footer h3 {
   margin-right: 5px;
 }
 
+.main__header {
+  box-shadow: 0px 0px 0px 0px white(164, 164, 164);
+}
+
 .main__header ::before {
   display: inline-block;
   position: absolute;
@@ -386,34 +389,28 @@ footer h3 {
   opacity: 1;
 }
 
-.mains__image img {
+img {
   display: block;
-  object-fit: cover;
   width: 100%;
-  height: 90vh;
-  object-position: center bottom;
+  height: 70vh;
+  object-fit: cover;
+  object-position: center;
 }
 
-.carteRestaurant {
-  border-radius: 60px 60px 0 0;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background-color: #f6f6f6;
-  margin-top: -76px;
-  position: relative;
+.title {
+  margin-top: -2rem;
 }
-.carteRestaurant__title h2 {
+.title h2 {
   font-family: "Shrikhand", "cursive";
+  padding: 1rem 1rem;
+  margin: 0%;
   position: relative;
   background-color: white;
   border-radius: 0 0 1rem 1rem;
-  margin: 0%;
-  padding-left: 1rem;
-  padding-top: 1rem;
-  border-radius: 0%;
+  border-radius: 2rem 2rem 0 0;
   background-color: #f6f6f6;
 }
-.carteRestaurant__title h2::before {
+.title h2::before {
   display: inline-block;
   position: absolute;
   font-style: normal;
@@ -433,7 +430,7 @@ footer h3 {
   opacity: 1;
   transition: all 200ms ease-in-out;
 }
-.carteRestaurant__title h2::after {
+.title h2::after {
   display: inline-block;
   position: absolute;
   font-style: normal;
@@ -454,176 +451,124 @@ footer h3 {
   transition: all 200ms ease-in-out;
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
-.carteRestaurant__title h2:hover::after {
+.title h2:hover::after {
   opacity: 1;
   transform: translateY(-50%) scale(1.3);
 }
 
-.category {
+.resto-main {
+  padding: 0 1rem;
+  background-color: #f6f6f6;
+}
+
+.menus {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
 }
 @media screen and (min-width: 951px) {
-  .category {
-    display: grid;
+  .menus {
     grid-template-columns: repeat(3, 1fr);
   }
-  .category h3 {
-    padding-left: 1rem;
-    font-weight: 400;
-    position: relative;
-    margin-bottom: 1rem;
-  }
-  .category h3::after {
-    content: "";
-    position: absolute;
-    top: 2rem;
-    left: 1rem;
-    height: 0.2rem;
-    width: 3.5rem;
-    background: green;
-  }
 }
-.category .choix {
+.menus h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.menus h3::after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  height: 0.25rem;
+  width: 3rem;
+  background-color: #99E2D0;
+}
+
+.menus__category {
   overflow: hidden;
+}
+.menus__category .menu-item {
   display: flex;
-  background-color: transparent;
+  background-color: white;
   border-radius: 1rem;
   overflow: hidden;
   margin: 0.5rem;
   box-shadow: 2px 1px 8px -3px #3f3b3b;
+  animation: appear 1s;
+  animation-fill-mode: both;
 }
-
-/*.carteRestaurant {
-  border-radius: 60px 60px 0 0;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background-color: #f6f6f6;
-  margin-top: -76px;
-  position: relative;
-
-  &__title {
-    .h2{
-   font-family: "Shrikhand", "cursive";
-      padding: 1rem;
-      @include heart-animated;
-      border-radius: 2rem 2rem 0 0;
-      background-color: $backgroundClair;
-    h2 {
-      font-family: "Shrikhand", "cursive";
-      padding: 1rem;
-      @include heart-animated;
-      border-radius: 2rem 2rem 0 0;
-      background-color: $backgroundClair;
-    }
-  }
+.menus__category .menu-item:nth-child(3) {
+  animation-delay: 600ms;
 }
-
-.line {
-  border: 2px solid #99e2d0;
-  width: 70px;
-  height: 2px;
-  margin-left: 30px;
-  margin-bottom: 15px;
+.menus__category .menu-item:nth-child(2) {
+  animation-delay: 400ms;
 }
-@keyframes rotatecross {
-  0% {
-    transform: rotate(-270°);
-  }
-  100% {
-    transform: rotate(0°);
-  }
+.menus__category .menu-item:nth-child(1) {
+  animation-delay: 200ms;
 }
-.choix {
-  display: flex; 
-  flex-direction: row;
-  background-color: white;
-  border-radius: 25px;
-  padding-bottom: 30px;
-  padding: 0px;
-  margin: 10px;
-  box-shadow: 4px 4px 6px #aaaa;
+.menus__category .menu-item:hover .menu-item__check {
+  margin-right: 0;
+}
+.menus__category .menu-item:hover i {
+  animation: quarterspin 0.5s ease-in-out;
+}
+.menus__category .menu-item__price {
+  margin-left: auto;
+  font-weight: 900;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+}
+.menus__category .menu-item__description {
+  padding: 1rem;
+  overflow: hidden;
+}
+.menus__category .menu-item__description h4,
+.menus__category .menu-item__description p {
+  margin: 0%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  & :hover {
-    .choix__cross {
-      margin-right: 0rem;
-      & i {
-        animation: rotatecross 4s;
-      }
-    }
-  }
-  & h4 {
-    padding-left: 20px;
-    padding-top: 10px;
-    margin: 0%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  & p {
-    padding-left: 20px;
-    margin: 0%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  &__price {
-    margin-left: auto;
-
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-
-    & span {
-      padding-top: 10px;
-      display: flex;
-      justify-content: flex-end;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-  }
+}
+.menus__category .menu-item__check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 0 1rem 1rem 0;
+  background-color: #99E2D0;
+  color: white;
+  margin-right: -4rem;
+  width: 4rem;
+  transition: margin-right 0.5s;
 }
 
-.category {
-
-  display: flex;
-  background-color: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  margin: 0.5rem;
-  @include dark-shadow;
-  background-color: $backgroundClair;
-  @include desktop {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  & h3 {
-    padding-left: 30px;
-  }
-}
 .btn__commander {
-  @include btn;
+  color: white;
+  font-weight: 300;
+  border: none;
+  border-radius: 2rem;
+  margin-top: 30px;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(to top, #9356DC, #b35cdc, #e86edb, #ff79da);
+  box-shadow: 2px 1px 8px -3px #3f3b3b;
+  transition: transform 180ms;
+  opacity: 1;
   padding-left: 50px;
   padding-right: 50px;
 }
+.btn__commander:hover {
+  box-shadow: 5px 3px 8px 3px rgba(0, 0, 0, 0);
+  transform: scale(1.02);
+  opacity: 0.8;
+}
+
 .bouton {
   display: grid;
   place-items: center;
   margin-bottom: 20px;
 }
-.choix__cross {
-  margin-right: -4rem;
-  width: 4rem;
-  background-color: red;
-  color: white;
-  display: grid;
-  place-items: center;
-  font-size: 0.5rem;
-  overflow: hidden;
-  transition: margin-right 1s;
-}
-*/
 
 /*# sourceMappingURL=style.css.map */
