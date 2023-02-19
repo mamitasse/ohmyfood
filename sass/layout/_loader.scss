@@ -32,6 +32,8 @@
   height: 20px;
   padding-right: 1em;
 }
+
+@include rotate;
 .loader__fork {
   vertical-align: middle;
   position: absolute;

@@ -1,13 +1,4 @@
 @charset "UTF-8";
-@keyframes rotate {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
 @keyframes grow {
   0%, 100% {
     -webkit-transform: scale(1, 1);
