@@ -31,9 +31,8 @@
        }
        &:hover {
          @include zoom;
-         opacity: 0.9;
-       
-         & i.fas{
+         background-color: lighten($primary, 36%);
+        & i.fas{
              color: #b35cdc;
            }
        }

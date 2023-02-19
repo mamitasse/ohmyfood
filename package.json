@@ -4,7 +4,8 @@
   "description": "openclassrooms projet 3 ohmyfood aplication restaurants",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch style.scss style.css"
+    "sass": "sass --watch style.scss style.css",
+    "build": "postcss ./style.css --use autoprefixer -d ./build/"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,10 @@
   "homepage": "https://github.com/mamitasse/ohmyfood#readme",
   "devDependencies": {
     "sass": "^1.58.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0"
   }
 }
