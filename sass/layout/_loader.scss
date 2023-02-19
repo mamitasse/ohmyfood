@@ -1,3 +1,4 @@
+@include loader;
 .loader {
   background-image: linear-gradient(
     to top,
@@ -41,6 +42,7 @@
   left: 50%;
   animation: rotate 0.5s linear forwards ;
 }
+@include grow;
 @for$i from 1 through 8 {
   .loader__food span:nth-child(#{$i}) {
     animation: grow 1s ease-in-out forwards;

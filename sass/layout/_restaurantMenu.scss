@@ -68,6 +68,8 @@ background-color: $backgroundmoyen;
         }
 }
 }
+@include appear;
+@include check;
 .menus__category {
     overflow: hidden;
     .menu-item {

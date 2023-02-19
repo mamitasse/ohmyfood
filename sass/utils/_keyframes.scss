@@ -7,19 +7,21 @@
       -webkit-transform: rotate(360deg);
     }
   }}
-  @keyframes grow{
-    0%,100% {
-      -webkit-transform: scale(1,1);
-      transform: scale(1,2);
-    }
-  
-    50%{
-      -webkit-transform: scale(2,2);
-      transform: scale(3,3);
-      transform: rotateX(360°)
-    }  
+ @mixin grow{ 
+   @keyframes grow{
+  0%,100% {
+    -webkit-transform: scale(1,1);
+    transform: scale(1,2);
   }
-  @keyframes loader {
+
+  50%{
+    -webkit-transform: scale(2,2);
+    transform: scale(3,3);
+    transform: rotateX(360°)
+  }  
+}}
+  @mixin loader{
+    @keyframes loader {
     0% {
       opacity: 1;
     }
@@ -29,7 +31,8 @@
     100% {
       opacity: 0;
     }
-  }
+  }}
+  @mixin coeurs{
   @keyframes coeurs{
     0%{
       opacity: 0;
@@ -45,24 +48,17 @@
       transform: scale(1.2);
     }
 
-  }
-  @keyframes rotatecross{
-0%{
-  transform: rotate(-270°);
-}
-100%{
-  transform: rotate(0°);
-}
-  }
-  @keyframes check{
+  } }
+@mixin check{ 
+    @keyframes check{
     0% {
       transform: rotate(-270deg);
     }
     100% {
       transform: rotate(0);
     }
-  }
-
+  }}
+@mixin appear{ 
   @keyframes appear {
       0% {
         transform: translateY(50%);
@@ -73,4 +69,4 @@
         opacity: 1;
       }
     }
- 
+  }
