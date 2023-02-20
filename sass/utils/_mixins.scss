@@ -178,8 +178,8 @@
 }
 @mixin grow {
   @keyframes grow {
-    0%,
-    100% {
+    0%
+    {
       -webkit-transform: scale(1, 1);
       transform: scale(1, 2);
     }
@@ -187,7 +187,11 @@
     50% {
       -webkit-transform: scale(2, 2);
       transform: scale(3, 3);
-      transform: rotateX(360°);
+      
+    }
+    100%{
+      -webkit-transform: scale(1);
+      transform: scale(1);
     }
   }
 }
