@@ -13,27 +13,22 @@
     animation: coeurs 0.5s;
     opacity: 1;
     color: transparent;
-    background: linear-gradient(to bottom,
-        $primary,
-        #b35cdc,
-        #e86edb,
-        #ff79da);
+    background: linear-gradient(to bottom, $primary, #b35cdc, #e86edb, #ff79da);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
-  }
+}
 .fa-regular {
   position: absolute;
   bottom: 4rem;
   right: 2rem;
   opacity: 1;
   @include desktop {
-  bottom: 1rem;
+    bottom: 1rem;
   }
   font-size: 2rem;
   &:hover {
     animation: coeurs 0.5s;
-   
   }
 }
 

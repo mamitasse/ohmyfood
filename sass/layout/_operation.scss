@@ -1,65 +1,61 @@
 .fonctionnement {
- margin: 2rem;
-   counter-reset: steps;
-   & ol {
-
+  margin: 2rem;
+  counter-reset: steps;
+  & ol {
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
-    @include desktop{
-        grid-template-columns: repeat(3,1fr);
-  }
-  @include large {
-    grid-template-columns: repeat(3,1fr);
-  }
-     & li {
-       align-items: baseline;
-       justify-content: flex-start;
-       gap: 0.2rem;
-       position: relative;
-       list-style-type: none;
-       display: flex;
-       background-color: #f6f6f6;
-       opacity: 1;
-       padding: 1rem 2rem;
-       border-radius: 1.5rem;
-       @include base-shadow;
-       & i.fas {
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include large {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    & li {
+      align-items: baseline;
+      justify-content: flex-start;
+      gap: 0.2rem;
+      position: relative;
+      list-style-type: none;
+      display: flex;
+      background-color: #f6f6f6;
+      opacity: 1;
+      padding: 1rem 2rem;
+      border-radius: 1.5rem;
+      @include base-shadow;
+      & i.fas {
         margin-right: 0.5rem;
         font-size: 2rem;
-      
-       }
-       &:hover {
-         @include zoom;
-         background-color: lighten($primary, 36%);
-        & i.fas{
-             color: #b35cdc;
-           }
-       }
-       &::before {
-         content: counter(steps);
-         counter-increment: steps;
-         width: 2rem;
-         height: 2rem;
-         bottom: 2rem;
-         left: -1rem;
-         background-color: $primary;
-         border-radius: 50%;
-         position: absolute;
-         display: grid;
-         place-items: center;
-         color: $white;
-         font-weight: 400;
-       }
- 
-     }
-    
-   }
- 
-   .main__header {
-     text-align: center;
-     position: relative;
-     box-shadow: 0px 3px 1px 1px rgb(164, 164, 164);
-     padding: 0.3rem;
-   }
- }
+      }
+      &:hover {
+        @include zoom;
+        background-color: lighten($primary, 36%);
+        & i.fas {
+          color: #b35cdc;
+        }
+      }
+      &::before {
+        content: counter(steps);
+        counter-increment: steps;
+        width: 2rem;
+        height: 2rem;
+        bottom: 2rem;
+        left: -1rem;
+        background-color: $primary;
+        border-radius: 50%;
+        position: absolute;
+        display: grid;
+        place-items: center;
+        color: $white;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .main__header {
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 3px 1px 1px rgb(164, 164, 164);
+    padding: 0.3rem;
+  }
+}
