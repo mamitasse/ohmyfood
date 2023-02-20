@@ -1,5 +1,7 @@
 .main__header {
-  box-shadow: 0px 0px 0px 0px white;
+ h1{
+  box-shadow: none;
+ }
 }
 .main__header {
   & ::before {
