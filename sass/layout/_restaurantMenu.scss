@@ -1,8 +1,10 @@
+/*----------HEADER DES RESTAURANT--------*/
 .main__header {
  h1{
   box-shadow: none;
  }
 }
+/*---------------FLECHE AJOUTE AVEC ::BEFORE--------*/
 .main__header {
   & ::before {
     display: inline-block;
@@ -30,7 +32,7 @@ img {
   object-fit: cover;
   object-position: center;
 }
-
+/*-----------TITRE DES MENUS--------------*/
 .title {
   margin-top: -2rem;
   h2 {
@@ -53,15 +55,16 @@ img {
   @include desktop {
     grid-template-columns: repeat(3, 1fr);
   }
+  /*----------ajout du trait vert avec ::after--------*/
   h3 {
     text-transform: uppercase;
     font-weight: 400;
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     &::after {
       content: "";
       position: absolute;
-      top: 1.5rem;
+      top: 1.8rem;
       left: 0;
       height: 0.25rem;
       width: 3rem;
@@ -69,6 +72,7 @@ img {
     }
   }
 }
+/*-----------ANIMATION APPARITION DES MENU ET VALIDATION CHECK ANIME ROTATION ICON---------*/
 @include appear;
 @include check;
 .menus__category {

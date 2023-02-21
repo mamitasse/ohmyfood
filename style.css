@@ -61,7 +61,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  animation: rotate 0.5s linear forwards;
+  animation: rotate 0.5s linear infinite;
 }
 
 @keyframes grow {
@@ -76,35 +76,35 @@
   }
 }
 .loader__food span:nth-child(1) {
-  animation: grow 1s ease-in-out forwards;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(2) {
-  animation: grow 1s ease-in-out forwards;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(3) {
-  animation: grow 1s ease-in-out forwards;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(4) {
-  animation: grow 1s ease-in-out forwards;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(5) {
-  animation: grow 1s ease-in-out forwards;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(6) {
-  animation: grow 1s ease-in-out forwards;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(7) {
-  animation: grow 1s ease-in-out forwards;
+  animation: grow 1s ease-in-out infinite;
 }
 
 .loader__food span:nth-child(8) {
-  animation: grow 1s ease-in-out forwards;
+  animation: grow 1s ease-in-out infinite;
 }
 
 header a {
@@ -182,7 +182,13 @@ main {
   margin: 0px;
 }
 
-.btn__explorer {
+.explorer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.explorer__btn {
   color: white;
   font-weight: 300;
   border: none;
@@ -194,17 +200,10 @@ main {
   transition: transform 180ms;
   opacity: 1;
 }
-.btn__explorer:hover {
+.explorer__btn:hover {
   box-shadow: 5px 3px 8px 3px rgba(0, 0, 0, 0);
   transform: scale(1.02);
   opacity: 0.8;
-}
-
-.explorer {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .fonctionnement {
@@ -423,10 +422,12 @@ footer h3 {
   margin-right: 5px;
 }
 
+/*----------HEADER DES RESTAURANT--------*/
 .main__header h1 {
   box-shadow: none;
 }
 
+/*---------------FLECHE AJOUTE AVEC ::BEFORE--------*/
 .main__header ::before {
   display: inline-block;
   position: absolute;
@@ -456,6 +457,7 @@ img {
      object-position: center;
 }
 
+/*-----------TITRE DES MENUS--------------*/
 .title {
   margin-top: -2rem;
 }
@@ -524,6 +526,7 @@ img {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
+  /*----------ajout du trait vert avec ::after--------*/
 }
 @media screen and (min-width: 951px) {
   .menus {
@@ -534,18 +537,19 @@ img {
   text-transform: uppercase;
   font-weight: 400;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 .menus h3::after {
   content: "";
   position: absolute;
-  top: 1.5rem;
+  top: 1.8rem;
   left: 0;
   height: 0.25rem;
   width: 3rem;
   background-color: #99E2D0;
 }
 
+/*-----------ANIMATION APPARITION DES MENU ET VALIDATION CHECK ANIME ROTATION ICON---------*/
 @keyframes appear {
   0% {
     transform: translateY(50%);

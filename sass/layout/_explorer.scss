@@ -1,9 +1,10 @@
-.btn__explorer {
-  @include btn;
-}
+
 .explorer {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+   &__btn{
+    @include btn;
+  }
 }
