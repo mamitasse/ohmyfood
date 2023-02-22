@@ -8,10 +8,6 @@
       name="description"
       content="Découvrez des menus qui vous conviennent dans des restaurants d'exception"
     />
-    <meta
-      name="keywords"
-      content="gastronomie, menu, restaurant, gastronomique, exception"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,13 +34,16 @@
       <h1><a href="index.html">Ohmyfood</a></h1>
     </header>
     <div class="baniere"><img src="img/restaurants/image-3.jpg" alt="" /></div>
+    <main class="pagerestaurant">
     <div class="title">
       <h2>À la française</h2>
+      <i class="fa-regular fa-heart"></i>
+      <i class="fa-solid fa-heart"></i>
     </div>
 
-    <main class="resto-main">
-      <section class="menus">
-        <div class="menus__category">
+    <section class="resto-main">
+      <div class="menus">
+        <div class="menus__category menus__category-1">
           <h3>Entrées</h3>
           <div class="menu__category__list">
             <div class="menu-item">
@@ -80,7 +79,7 @@
           </div>
         </div>
 
-        <div class="menus__category">
+        <div class="menus__category menus__category-2">
           <h3>Plats</h3>
           <div class="menu__category__list">
             <div class="menu-item">
@@ -116,7 +115,7 @@
           </div>
         </div>
 
-        <div class="menus__category">
+        <div class="menus__category menus__category-3">
           <h3>Desserts</h3>
           <div class="menu__category__list">
             <div class="menu-item">
@@ -151,10 +150,11 @@
             </div>
           </div>
         </div>
-      </section>
-      <div class="bouton">
-        <button class="btn__commander">commander</button>
       </div>
+      <div class="bouton">
+        <button class="btn__commander">Commander</button>
+      </div>
+    </section>
     </main>
 
     <!-- Footer -->

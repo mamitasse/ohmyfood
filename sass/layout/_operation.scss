@@ -28,10 +28,11 @@
         font-size: 2rem;
       }
       &:hover {
+        color: $primary;
         @include zoom;
         background-color: lighten($primary, 36%);
         & i.fas {
-          color: #b35cdc;
+          color: $primary;
         }
       }
       &::before {

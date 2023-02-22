@@ -1,41 +1,10 @@
 @include coeurs;
-.fa-solid {
-  position: absolute;
-  bottom: 4rem;
-  @include desktop {
-    bottom: 1rem;
-  }
-  right: 2rem;
-  font-size: 2rem;
-  opacity: 0;
-  transition: all 1s ease-in-out;
-  &:hover {
-    animation: coeurs 0.5s;
-    opacity: 1;
-    color: transparent;
-    background: linear-gradient(to bottom, $primary, #b35cdc, #e86edb, #ff79da);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-  }
-}
-.fa-regular {
-  position: absolute;
-  bottom: 4rem;
-  right: 2rem;
-  opacity: 1;
-  @include desktop {
-    bottom: 1rem;
-  }
-  font-size: 2rem;
-  &:hover {
-    animation: coeurs 0.5s;
-  }
-}
+
 
 .new {
   position: relative;
   &::before {
-    content: "nouveau";
+    content: "Nouveau";
     background: $tertiary;
     border: 5px solid $tertiary;
     border-radius: 5px;
@@ -57,9 +26,6 @@
   @include desktop {
     grid-template-columns: repeat(2, 1fr);
   }
-  @include large {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .card {
@@ -78,6 +44,48 @@
   }
   &__description {
     padding: 1rem;
+    h3{
+      margin: 0%;
+      padding: 0%;
+    }
+    p{
+      margin: 0%;
+      padding: 0%;
+    }
+  }
+}
+.card__description{
+  .fa-solid {
+    position: absolute;
+    bottom: 2rem;
+    @include desktop {
+      bottom: 1rem;
+    }
+    right: 2rem;
+    font-size: 2rem;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    &:hover {
+      animation: coeurs 0.5s;
+      opacity: 1;
+      color: transparent;
+      background: linear-gradient(to bottom, $primary, #b35cdc, #e86edb, #ff79da);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+  }
+  .fa-regular {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    opacity: 1;
+    @include desktop {
+      bottom: 1rem;
+    }
+    font-size: 2rem;
+    &:hover {
+      animation: coeurs 0.5s;
+    }
   }
 }
 @for $i from 1 through 4 {

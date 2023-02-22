@@ -1,146 +1,169 @@
 /*----------HEADER DES RESTAURANT--------*/
 .main__header {
- h1{
-  box-shadow: none;
+  h1{
+   box-shadow: none;
+  }
+ }
+ /*---------------FLECHE AJOUTE AVEC ::BEFORE--------*/
+ .main__header {
+   & ::before {
+     display: inline-block;
+     position: absolute;
+     font-style: normal;
+     font-variant: normal;
+     text-rendering: auto;
+     -webkit-font-smoothing: antialiased;
+     font-family: "Font Awesome 6 Free";
+     font-weight: 900;
+     content: "\f060";
+     font-size: 2rem;
+     left: 2rem;
+     top: 1rem;
+     color: black;
+     background-clip: text;
+     -webkit-background-clip: text;
+     opacity: 1;
+   }
+ }
+ .baniere{ 
+ img {
+   display: block;
+   width: 100%;
+   height: 40vh;
+   object-fit: cover;
+   object-position: center;
  }
 }
-/*---------------FLECHE AJOUTE AVEC ::BEFORE--------*/
-.main__header {
-  & ::before {
-    display: inline-block;
-    position: absolute;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    content: "\f060";
-    font-size: 2rem;
-    left: 2rem;
-    top: 1rem;
-    color: black;
-    background-clip: text;
-    -webkit-background-clip: text;
-    opacity: 1;
-  }
-}
-img {
-  display: block;
-  width: 100%;
-  height: 70vh;
-  object-fit: cover;
-  object-position: center;
-}
-/*-----------TITRE DES MENUS--------------*/
-.title {
-  margin-top: -2rem;
-  h2 {
-    font-family: "Shrikhand", "cursive";
-    padding: 1rem 1rem;
-    margin: 0%;
-    @include heart-animated;
-    border-radius: 2rem 2rem 0 0;
-    background-color: $backgroundmoyen;
-  }
-}
-.resto-main {
-  padding: 0 1rem;
+.pagerestaurant{
   background-color: $backgroundmoyen;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  width: 100%;
+  position: relative;
+  margin-top: -50px;  
 }
-.menus {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
-  @include desktop {
-    grid-template-columns: repeat(3, 1fr);
+ /*-----------TITRE DES MENUS--------------*/
+ .title {
+   & h2 {
+     font-family: "Shrikhand", "cursive";
+     padding: 1rem 1rem;
+     margin: 0%;
+     border-radius: 2rem 2rem 0 0;
+     background-color: $backgroundmoyen;
+   }
+   & .fa-solid{
+    @include fa-solid;
+    position: absolute;
+    right: 2rem;
+    top: 1.2rem;
+   }
+  & .fa-regular{
+   @include fa-regular;
+    position: absolute;
+    right: 2rem;
+    top: 1.2rem;
   }
-  /*----------ajout du trait vert avec ::after--------*/
-  h3 {
-    text-transform: uppercase;
-    font-weight: 400;
-    position: relative;
-    margin-bottom: 1.5rem;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 1.8rem;
-      left: 0;
-      height: 0.25rem;
-      width: 3rem;
-      background-color: $tertiary;
-    }
-  }
+ }
+ .resto-main {
+   padding: 0 1rem;
+   background-color: $backgroundmoyen;
+ }
+ .menus {
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   gap: 1rem;
+   @include desktop {
+     grid-template-columns: repeat(3, 1fr);
+   }
+   /*----------ajout du trait vert avec ::after--------*/
+  & h3 {
+     text-transform: uppercase;
+     font-weight: 400;
+     position: relative;
+     margin-bottom: 1.5rem;
+     &::after {
+       content: "";
+       position: absolute;
+       top: 1.8rem;
+       left: 0;
+       height: 0.25rem;
+       width: 3rem;
+       background-color: $tertiary;
+     }
+   }
+ }
+ /*-----------ANIMATION APPARITION DES MENU ET VALIDATION CHECK ANIME ROTATION ICON---------*/
+ @include appear;
+ @include check;
+ .menus__category {
+   overflow: hidden;
+   .menu-item {
+     display: flex;
+     background-color: white;
+     border-radius: 1rem;
+     overflow: hidden;
+     margin: 0.5rem;
+     @include base-shadow;
+     &:hover {
+       cursor: pointer;
+       .menu-item__check {
+         margin-right: 0;
+       }
+       i {
+         animation: check 0.5s ease-in-out;
+       }
+     }
+   }
+   .menu-item__price {
+     margin-left: auto;
+     font-weight: 900;
+     padding: 1rem;
+     display: flex;
+     align-items: flex-end;
+   }
+   .menu-item__description {
+     padding: 1rem;
+     overflow: hidden;
+     h4,
+     p {
+       margin: 0%;
+       overflow: hidden;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+     }
+   }
+   .menu-item__check {
+     display: grid;
+     place-items: center;
+     flex-shrink: 0;
+     $button-width: 4rem;
+     border-radius: 0 1rem 1rem 0;
+     background-color: $tertiary;
+     color: white;
+     margin-right: -1 * $button-width;
+     width: $button-width;
+     transition: margin-right 0.5s;
+   }
+ }
+ 
+ .btn__commander {
+   @include btn;
+   padding-left: 50px;
+   padding-right: 50px;
+ }
+ .bouton {
+   display: grid;
+   place-items: center;
+   margin-bottom: 20px;
+ }
+ .menus__category-1{
+  animation: appear 2s ease-in-out;
+ 
 }
-/*-----------ANIMATION APPARITION DES MENU ET VALIDATION CHECK ANIME ROTATION ICON---------*/
-@include appear;
-@include check;
-.menus__category {
-  overflow: hidden;
-  .menu-item {
-    $numberOfItems: 3;
-    @for $i from $numberOfItems through 1 {
-      &:nth-child(#{$i}) {
-        animation-delay: 200ms * $i;
-      }
-    }
-    display: flex;
-    background-color: white;
-    border-radius: 1rem;
-    overflow: hidden;
-    margin: 0.5rem;
-    @include base-shadow;
-    animation: appear 1s;
-    animation-fill-mode: both;
-    &:hover {
-      cursor: pointer;
-      .menu-item__check {
-        margin-right: 0;
-      }
-      i {
-        animation: check 0.5s ease-in-out;
-      }
-    }
-  }
-  .menu-item__price {
-    margin-left: auto;
-    font-weight: 900;
-    padding: 1rem;
-    display: flex;
-    align-items: flex-end;
-  }
-  .menu-item__description {
-    padding: 1rem;
-    overflow: hidden;
-    h4,
-    p {
-      margin: 0%;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-  }
-  .menu-item__check {
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    $button-width: 4rem;
-    border-radius: 0 1rem 1rem 0;
-    background-color: $tertiary;
-    color: white;
-    margin-right: -1 * $button-width;
-    width: $button-width;
-    transition: margin-right 0.5s;
-  }
-}
+.menus__category-2{
+  animation: appear 4s ease-in-out;
 
-.btn__commander {
-  @include btn;
-  padding-left: 50px;
-  padding-right: 50px;
 }
-.bouton {
-  display: grid;
-  place-items: center;
-  margin-bottom: 20px;
+.menus__category-3{
+  animation: appear 6s ease-in-out;
 }

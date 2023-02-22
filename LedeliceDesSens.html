@@ -8,10 +8,6 @@
       name="description"
       content="Découvrez des menus qui vous conviennent dans des restaurants d'exception"
     />
-    <meta
-      name="keywords"
-      content="gastronomie, menu, restaurant, gastronomique, exception"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,11 +34,14 @@
       <h1><a href="index.html">Ohmyfood</a></h1>
     </header>
     <div class="baniere"><img src="img/restaurants/image-4.jpg" alt="" /></div>
+    <main class="pagerestaurant">
     <div class="title">
       <h2>Le délisse des sens</h2>
+      <i class="fa-regular fa-heart"></i>
+      <i class="fa-solid fa-heart"></i>
     </div>
-    <main class="resto-main">
-      <section class="menus">
+    <section class="resto-main">
+      <div class="menus">
         <div class="menus__category">
           <h3>Entrées</h3>
           <div class="menu__category__list">
@@ -150,8 +149,12 @@
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+      <div class="bouton">
+        <button class="btn__commander">commander</button>
+      </div>
+    </section>
+  </main>
 
     <!--Footer-->
     <footer>

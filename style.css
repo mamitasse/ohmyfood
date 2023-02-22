@@ -205,6 +205,12 @@ main {
   transform: scale(1.02);
   opacity: 0.8;
 }
+.explorer h2 {
+  text-align: center;
+}
+.explorer p {
+  text-align: center;
+}
 
 .fonctionnement {
   margin: 2rem;
@@ -243,11 +249,12 @@ main {
   font-size: 2rem;
 }
 .fonctionnement ol li:hover {
+  color: #9356DC;
   transform: scale(1.02);
   background-color: #f4eefc;
 }
 .fonctionnement ol li:hover i.fas {
-  color: #b35cdc;
+  color: #9356DC;
 }
 .fonctionnement ol li::before {
   content: counter(steps);
@@ -284,49 +291,11 @@ main {
     transform: scale(1.2);
   }
 }
-.fa-solid {
-  position: absolute;
-  bottom: 4rem;
-  right: 2rem;
-  font-size: 2rem;
-  opacity: 0;
-  transition: all 1s ease-in-out;
-}
-@media screen and (min-width: 951px) {
-  .fa-solid {
-    bottom: 1rem;
-  }
-}
-.fa-solid:hover {
-  animation: coeurs 0.5s;
-  opacity: 1;
-  color: transparent;
-  background: linear-gradient(to bottom, #9356DC, #b35cdc, #e86edb, #ff79da);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-
-.fa-regular {
-  position: absolute;
-  bottom: 4rem;
-  right: 2rem;
-  opacity: 1;
-  font-size: 2rem;
-}
-@media screen and (min-width: 951px) {
-  .fa-regular {
-    bottom: 1rem;
-  }
-}
-.fa-regular:hover {
-  animation: coeurs 0.5s;
-}
-
 .new {
   position: relative;
 }
 .new::before {
-  content: "nouveau";
+  content: "Nouveau";
   background: #99E2D0;
   border: 5px solid #99E2D0;
   border-radius: 5px;
@@ -350,11 +319,6 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (min-width: 1300px) {
-  .cards {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
 
 .card {
   border-radius: 10% 10% 0 0;
@@ -373,6 +337,51 @@ main {
 }
 .card__description {
   padding: 1rem;
+}
+.card__description h3 {
+  margin: 0%;
+  padding: 0%;
+}
+.card__description p {
+  margin: 0%;
+  padding: 0%;
+}
+
+.card__description .fa-solid {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+@media screen and (min-width: 951px) {
+  .card__description .fa-solid {
+    bottom: 1rem;
+  }
+}
+.card__description .fa-solid:hover {
+  animation: coeurs 0.5s;
+  opacity: 1;
+  color: transparent;
+  background: linear-gradient(to bottom, #9356DC, #b35cdc, #e86edb, #ff79da);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.card__description .fa-regular {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  opacity: 1;
+  font-size: 2rem;
+}
+@media screen and (min-width: 951px) {
+  .card__description .fa-regular {
+    bottom: 1rem;
+  }
+}
+.card__description .fa-regular:hover {
+  animation: coeurs 0.5s;
 }
 
 .card__image-1 {
@@ -396,6 +405,9 @@ footer {
   list-style-type: none;
   padding: 25px;
   flex-grow: 1;
+}
+footer ul {
+  list-style-type: none;
 }
 footer li {
   padding: 0.5rem;
@@ -447,74 +459,63 @@ footer h3 {
   opacity: 1;
 }
 
-img {
+.baniere img {
   display: block;
   width: 100%;
-  height: 70vh;
+  height: 40vh;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
 }
 
-/*-----------TITRE DES MENUS--------------*/
-.title {
-  margin-top: -2rem;
+.pagerestaurant {
+  background-color: #f6f6f6;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  width: 100%;
+  position: relative;
+  margin-top: -50px;
 }
+
+/*-----------TITRE DES MENUS--------------*/
 .title h2 {
   font-family: "Shrikhand", "cursive";
   padding: 1rem 1rem;
   margin: 0%;
-  position: relative;
-  background-color: white;
-  border-radius: 0 0 1rem 1rem;
   border-radius: 2rem 2rem 0 0;
   background-color: #f6f6f6;
 }
-.title h2::before {
-  display: inline-block;
-  position: absolute;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  content: "\f004";
+.title .fa-solid {
   font-size: 2rem;
-  right: 2rem;
-  top: 2rem;
-  transform: translateY(-50%);
-  color: inherit;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 1;
-  transition: all 200ms ease-in-out;
-}
-.title h2::after {
-  display: inline-block;
-  position: absolute;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f004";
-  font-size: 2rem;
-  right: 2rem;
-  top: 2rem;
-  transform: translateY(-50%);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
   opacity: 0;
   transition: all 200ms ease-in-out;
-  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
+  position: absolute;
+  right: 2rem;
+  top: 1.2rem;
 }
-.title h2:hover::after {
+.title .fa-solid:hover {
+  animation: coeurs 1s;
   opacity: 1;
-  transform: translateY(-50%) scale(1.3);
+  background: linear-gradient(to bottom, #9356DC, #b35cdc, #e86edb, #ff79da);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.title .fa-regular {
+  opacity: 1;
+  font-size: 2rem;
+  position: absolute;
+  right: 2rem;
+  top: 1.2rem;
+}
+@media screen and (min-width: 951px) {
+  .title .fa-regular {
+    bottom: 1rem;
+  }
+}
+.title .fa-regular:hover {
+  opacity: 0;
+  color: transparent;
 }
 
 .resto-main {
@@ -551,12 +552,10 @@ img {
 
 /*-----------ANIMATION APPARITION DES MENU ET VALIDATION CHECK ANIME ROTATION ICON---------*/
 @keyframes appear {
-  0% {
-    transform: translateY(50%);
+  from {
     opacity: 0;
   }
-  100% {
-    transform: translateY(0);
+  to {
     opacity: 1;
   }
 }
@@ -578,17 +577,6 @@ img {
   overflow: hidden;
   margin: 0.5rem;
   box-shadow: 2px 1px 8px -3px #3f3b3b;
-  animation: appear 1s;
-  animation-fill-mode: both;
-}
-.menus__category .menu-item:nth-child(3) {
-  animation-delay: 600ms;
-}
-.menus__category .menu-item:nth-child(2) {
-  animation-delay: 400ms;
-}
-.menus__category .menu-item:nth-child(1) {
-  animation-delay: 200ms;
 }
 .menus__category .menu-item:hover {
   cursor: pointer;
@@ -653,4 +641,16 @@ img {
   display: grid;
   place-items: center;
   margin-bottom: 20px;
+}
+
+.menus__category-1 {
+  animation: appear 2s ease-in-out;
+}
+
+.menus__category-2 {
+  animation: appear 4s ease-in-out;
+}
+
+.menus__category-3 {
+  animation: appear 6s ease-in-out;
 }/*# sourceMappingURL=style.css.map */
