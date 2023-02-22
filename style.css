@@ -72,7 +72,7 @@
     transform: scale(3, 3);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1.2);
   }
 }
 .loader__food span:nth-child(1) {
