@@ -321,17 +321,17 @@ main {
 }
 
 .card {
-  border-radius: 10% 10% 0 0;
+  border-radius: 35px 35px 0 0;
   box-shadow: 4px 4px 6px #aaa;
   background: white;
-  border-radius: 10%;
+  border-radius: 35px;
   position: relative;
 }
 .card:hover {
   transform: scale(1.02);
 }
 .card__image {
-  border-radius: 10% 10% 0 0;
+  border-radius: 35px 35px 0 0;
   background-size: cover;
   height: 13rem;
 }
@@ -410,7 +410,7 @@ footer ul {
   list-style-type: none;
 }
 footer li {
-  padding: 0.5rem;
+  padding: 0rem;
 }
 footer a {
   color: white;
